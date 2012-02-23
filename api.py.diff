@@ -1,0 +1,11 @@
+--- /Users/kshimo69/.virtualenv/social/lib/python2.7/site-packages/twitter/api.py.org	2012-02-22 22:40:45.000000000 +0900
++++ /Users/kshimo69/.virtualenv/social/lib/python2.7/site-packages/twitter/api.py	2012-02-22 22:42:33.000000000 +0900
+@@ -127,6 +127,8 @@
+             # supplied value otherwise, just use the part.
+             uriparts.append(str(kwargs.pop(uripart, uripart)))
+         uri = '/'.join(uriparts)
++        if self.domain == "api.twitter.com":
++            uri = uri + '/1'
+ 
+         method = kwargs.pop('_method', None)
+         if not method:
